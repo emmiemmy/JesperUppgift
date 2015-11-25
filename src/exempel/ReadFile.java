@@ -3,6 +3,11 @@ package exempel;// Sample code to read a complete text file into a char array.
 import java.io.*;
 import java.util.*;
 
+/**
+ * Hej Emma! :)
+ * @author Evy
+ *
+ */
 public class ReadFile {
     public static char[] readFile(String fnam) throws IOException {
         InputStreamReader r = new InputStreamReader(new FileInputStream(fnam));
