@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Hej Emma! ^
+ * Hej Emma! ^ Hej EEvys
  * @author Evy
  *
  */
@@ -44,8 +44,7 @@ public class ReadFile {
 
     // Test.
     public static void main(String[] args) throws IOException {
-      //  char[] f = readFile(args[0]);
-        char[] f = readFile("/Users/Evy/Desktop/Workspace/Jespers Uppgift/src/filename.txt");
+        char[] f = readFile("src/filename.txt");
         for (int i = 0; i < f.length; i++) {
             if (i == 40) {
                 System.out.println("… and then "+(f.length-i)+" more characters");
