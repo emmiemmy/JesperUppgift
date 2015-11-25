@@ -1,0 +1,15 @@
+FRÅGOR ATT BESVARA
+ * Menar han med naiv sökning, en egen lösning till strängsökningen?
+ 
+ * Vad ska output vara? Indexpositionerna av sträng P (sökt sträng) i Sträng T (Sträng i textfilen)?
+ 
+ * Hur mäter vi tidskomplexiteten? Genom tid? Genom antal utförda karaktäristiska operationer?
+ 
+
+ 
+ 
+ PLANERING
+ 
+ Skapa en klass för naiv sökning av given sträng
+ 
+ Skapa en klass för tillämpad 
