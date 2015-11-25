@@ -52,5 +52,7 @@ public class ReadFile {
             }
             System.out.println(i+": "+f[i]+" ("+(int) f[i]+")");
         }
+        
+        new NaiveSearch(f);
     }
 }

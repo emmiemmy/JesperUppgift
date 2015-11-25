@@ -7,6 +7,8 @@ FRÅGOR ATT BESVARA
  
  *Vad motsvarar siffrorna i ´nom parenteser? Sannolikhet?
  
+ *Bör ssträngen som skall sökas efter vara en (konverteras till) char-array?
+ 
 
  
  
