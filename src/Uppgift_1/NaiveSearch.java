@@ -7,6 +7,11 @@ package Uppgift_1;
  *
  */
 public class NaiveSearch {
+	private char[] stringToSearchIn;
+
+	public NaiveSearch(char[] f) {
+		this.stringToSearchIn = f;
+	}
 	
 	
 
