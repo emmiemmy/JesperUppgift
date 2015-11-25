@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>Jespers Uppgift</name>
+=======
+	<name>JesperUppgift_1</name>
+>>>>>>> 5a4498826eb31ae0db50f068c2a199ba083b59cc
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
+<<<<<<< HEAD
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
 			<arguments>
@@ -13,5 +18,9 @@
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
+=======
+	</buildSpec>
+	<natures>
+>>>>>>> 5a4498826eb31ae0db50f068c2a199ba083b59cc
 	</natures>
 </projectDescription>

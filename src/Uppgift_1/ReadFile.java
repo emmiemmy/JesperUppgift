@@ -1,10 +1,10 @@
-package exempel;// Sample code to read a complete text file into a char array.
+package Uppgift_1;// Sample code to read a complete text file into a char array.
 
 import java.io.*;
 import java.util.*;
 
 /**
- * Hej Emma! :)
+ * Hej Emma! ^
  * @author Evy
  *
  */
