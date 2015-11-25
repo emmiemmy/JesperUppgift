@@ -3,7 +3,7 @@
 package Uppgift_1;
 
 /**
- * Klassen läser in en textfil
+ * 
  */
 import java.io.*;
 import java.util.*;
