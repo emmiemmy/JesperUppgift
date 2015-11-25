@@ -5,6 +5,8 @@ FRÅGOR ATT BESVARA
  
  * Hur mäter vi tidskomplexiteten? Genom tid? Genom antal utförda karaktäristiska operationer?
  
+ *Vad motsvarar siffrorna i ´nom parenteser? Sannolikhet?
+ 
 
  
  
@@ -12,4 +14,4 @@ FRÅGOR ATT BESVARA
  
  Skapa en klass för naiv sökning av given sträng
  
- Skapa en klass för tillämpad 
+ Skapa en klass för tillämpning av rekommenderad algoritm. Knuth Pratt... etc.
