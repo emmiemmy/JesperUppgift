@@ -9,15 +9,17 @@ import javax.swing.JOptionPane;
  *
  */
 public class NaiveSearch {
-	private char[] strToSearchIn;
-	private char[] strToSearchFor;
+	private char[] charArrayToSearchIn;
+	private char[] charArrayToSearchFor;
 
 	public NaiveSearch(char[] f) {
-		this.strToSearchIn = f;
+		this.charArrayToSearchIn = f;
+		userInput();
 	}
 	
 	public void userInput(){
 		String userInput = JOptionPane.showInputDialog(null, "Mata in den sträng som du vill söka efter");
+		this.charArrayToSearchFor = userInput.toCharArray();
 		
 	}
 	
