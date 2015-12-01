@@ -19,7 +19,7 @@ public class NaiveSearch {
 	public NaiveSearch(char[] f) {
 		this.searchIn = f;
 		userInput();
-		startSearch();
+		searchArray();
 	}
 
 	public void userInput() {
@@ -30,22 +30,37 @@ public class NaiveSearch {
 
 	}
 
+	/**
+	 * Metoden söker igenom en sträng efter en givet mönster. Om det blir match forstätter jämförelsen i en inre loop.
+	 * Den inre loopen avbryts då mönstret inte matchar och går tillbaka till den yttre loopen som letar vidare i strängen.
+	 */
 	public void searchArray() {
-		for (int i = 0; i < searchFor.length; i++) {
-			if(count == searchFor.length){
-				System.out.println("Vi är klara!");
-			}
-			while(searchFor[i]==searchIn[i]){
-				System.out.println("match!");
-				count++;
+		int n = searchIn.length;
+		int m = searchFor.length;
+		System.out.println("Längden på n och m "+ n + " " + m);
+
+		int j = 0;
+		for(int i = 0; i < (n - m+1);i++){
+			System.out.println("i är: " + i);
+			System.out.println("Söker i : " + searchIn[i] );
+			if(searchFor[j] == (searchIn[i])){
+				System.out.println("Aha! Hittade första bokstaven!");
+				for(j = 1;j < m;j++){
+					System.out.println("Inre loop");
+					if(searchFor[j]==searchIn[i+j]){
+						System.out.println("Match mellan: " + j + " "+ searchFor[j] +  " och " + searchIn[i+j]);
+						if(j == m-1){
+							System.out.println("Klart! Strängen befinner sig på indexposition: "+ i);
+						}
+					}else{
+						System.out.println("Falskt alarm! J är: " + j);
+						break;
+					}
+				}
+				
 				
 			}
 		}
-
-	}
-
-	public void startSearch() {
-		searchArray();
 
 	}
 
