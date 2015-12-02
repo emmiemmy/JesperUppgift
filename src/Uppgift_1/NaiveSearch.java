@@ -23,9 +23,14 @@ public class NaiveSearch {
 	}
 
 	public void userInput() {
-		String userInput = JOptionPane.showInputDialog(null, "Mata in den sträng som du vill söka efter");
+		String userInput = JOptionPane.showInputDialog(null,
+				"Mata in den sträng som du vill söka efter");
 		this.pattern = userInput.toCharArray();
 		this.count = 0;
+	}
+	
+	public void makeLowercase(){
+		
 	}
 
 	/**
@@ -35,34 +40,33 @@ public class NaiveSearch {
 	 * vidare i strängen.
 	 */
 	public void searchArray() {
+		String pos = "";
 		boolean isFound = false;
 		int n = text.length;
 		int m = pattern.length;
-		System.out.println("Längden på n och m " + n + " " + m);
 
 		int j = 0;
 		for (int i = 0; i < (n - m + 1); i++) {
-			System.out.println("i är: " + i);
-			System.out.println("Söker i : " + text[i]);
-			if (pattern[j] == (text[i])) {
-				System.out.println("Aha! Hittade första bokstaven!");
-				for (j = 1; j < m; j++) {
-					System.out.println("Inre loop");
-					if (pattern[j] == text[i + j]) {
-						System.out.println("Match mellan: " + j + " " + pattern[j] + " och " + text[i + j]);
-						if (j == m - 1) {
-							System.out.println("Klart! Strängen befinner sig på indexposition: " + i);
-							isFound = true;
-						}
-					} else {
-						System.out.println("Falskt alarm! Vi hoppar ur den inre loopen J är: " + j);
+			System.out.println("Jämförelse mellan: " + text[i] + " och " + pattern[j]);
+			for (j = 0; j < m; j++) {
+				if (pattern[j] == text[i + j]) {
+					System.out.println("Match mellan: " + j + " " + pattern[j]
+							+ " och " + text[i + j]);
+					if (j == m - 1) {
+						System.out.println("Klart! Strängen befinner sig på indexposition: " + i);
+						pos += i + " ";
+						isFound = true;
+						j = 0;
 						break;
 					}
+				} else {
+					System.out.println("Ingen matchning, öka i med 1: i="+i);
+					break;
 				}
 			}
 		}
 		if (isFound) {
-			System.out.println("Strängen är funnen!");
+			System.out.println("Strängen är funnen på position: " + pos);
 		} else {
 			System.out.println("strängen är ej funnen");
 		}
