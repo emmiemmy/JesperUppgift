@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
 public class NaiveSearch {
 	private char[] text;
 	private char[] pattern;
-	private int count;
 
 	public NaiveSearch(char[] f) {
 		this.text = f;
@@ -26,7 +25,6 @@ public class NaiveSearch {
 		String userInput = JOptionPane.showInputDialog(null,
 				"Mata in den sträng som du vill söka efter");
 		this.pattern = userInput.toCharArray();
-		this.count = 0;
 	}
 	
 	public void makeLowercase(){
