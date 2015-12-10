@@ -70,8 +70,8 @@ public class KnuthMorrisPratt {
 		int n = text.length;
 		int m = pattern.length;
 
-		while ((n - k) >= m) {
-			System.out.println("jämför " + text[i] + " med " +  pattern[j]);
+		while ((n+1 - k) >= m) {
+			System.out.println("Position n-k texten:: " + (n-k) +" Position: k: " + k + " jämför " + text[i] + " med " +  pattern[j]);
 			while (j < m && text[i] == pattern[j]) {
 				System.out.println("Match! jämför " + text[i] + " med " +  pattern[j]);
 				i++;
