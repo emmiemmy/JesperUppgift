@@ -58,7 +58,7 @@ public class KnuthMorrisPratt {
 			}
 			prefixArray[b] = a;
 		}
-		System.out.println("Antal karaktäristiska operationer för N är: " + counterN++);
+		System.out.println("Antal karaktäristiska operationer för N är: " + counterN);
 		return prefixArray;
 	}
 
@@ -92,6 +92,9 @@ public class KnuthMorrisPratt {
 			if (j > 1) {
 				j = prefix[j - 1] + 1;
 			}
+			counterM++;
 		}
+		System.out.println("Antal karaktäristiska operationer för N är: " + counterN);
+		System.out.println("Antal karaktäristiska operationer för M är: " + counterM);
 	}
 }
