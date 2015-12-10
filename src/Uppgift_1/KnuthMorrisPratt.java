@@ -25,7 +25,8 @@ public class KnuthMorrisPratt {
 	}
 
 	public void userInput() {
-		String userInput = JOptionPane.showInputDialog(null, "Mata in den sträng som du vill söka efter");
+		String userInput = JOptionPane.showInputDialog(null,
+				"Mata in den sträng som du vill söka efter");
 		this.pattern = userInput.toCharArray();
 	}
 
@@ -58,7 +59,8 @@ public class KnuthMorrisPratt {
 			}
 			prefixArray[b] = a;
 		}
-		System.out.println("Antal karaktäristiska operationer för N är: " + counterN);
+		System.out.println("Antal karaktäristiska operationer för N är: "
+				+ counterN);
 		return prefixArray;
 	}
 
@@ -66,16 +68,20 @@ public class KnuthMorrisPratt {
 		System.out.println("search()");
 
 		int i = 0;
-		int j = 0;
+		int j = 1;
 		int k = 0;
 		int n = text.length;
 		int m = pattern.length;
 
 		while (((n + 1) - k) >= m) {
+			counterM++;
 			while (j < m && text[i] == pattern[j]) {
-				System.out.println("Match! jämför " + text[i] + " med " + pattern[j]);
+				System.out.println("Match! jämför " + text[i] + " med "
+						+ pattern[j]);
 				i++;
 				j++;
+				counterM++;
+
 			}
 			if (j >= m) {
 				System.out.println("Positionen för strängen är: " + (k - 1));
@@ -84,17 +90,19 @@ public class KnuthMorrisPratt {
 				k = i - prefix[j - 1];
 			} else {
 				if (i == k) {
-				i++;
-			}
-			k = i;
+					i++;
+				}
+				k = i;
 			}
 
 			if (j > 1) {
 				j = prefix[j - 1] + 1;
 			}
-			counterM++;
 		}
-		System.out.println("Antal karaktäristiska operationer för N är: " + counterN);
-		System.out.println("Antal karaktäristiska operationer för M är: " + counterM);
+		System.out.println("Tidskomplexiteten för KMP-algoritmen är: O(n+m)");
+		System.out.println("Antal karaktäristiska operationer för N är: "
+				+ (counterN + 2));
+		System.out.println("Antal karaktäristiska operationer för M är: "
+				+ (counterM + 1));
 	}
 }
