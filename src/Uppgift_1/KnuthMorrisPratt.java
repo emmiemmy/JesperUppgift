@@ -3,7 +3,7 @@ package Uppgift_1;
 import javax.swing.JOptionPane;
 
 /**
- * Klassen gör en strängsökning med Knuth-Morris-Pratt algoritmen.
+ * Klassen gör en strängsökning med Knuth-Morris-Pratt-algoritmen.
  * 
  * @author Emma Shakespeare och Evelyn Gustavsson
  *
@@ -17,6 +17,16 @@ public class KnuthMorrisPratt {
 	private long KMPTime, startTime, stopTime;
 	private String positionFound;
 
+	/**
+	 * Konstruktor som initierar värden för instansvariablerna och mäter tiden
+	 * för textsökningen i nanosekunder. Information om algoritmens
+	 * tidskomplexitet, antal karaktäristiska operationer för akuell sökning
+	 * samt på vilken position i texten som textmönstret påträffats skrivs ut.
+	 * Likaså görs utskrift för pattern och prefix som arrayer, efter
+	 * användarens inmatning.
+	 * 
+	 * @param t
+	 */
 	public KnuthMorrisPratt(char[] t) {
 		counterN = 0;
 		counterM = 0;
@@ -42,7 +52,8 @@ public class KnuthMorrisPratt {
 	}
 
 	/**
-	 * 
+	 * Läser in textmönstret som användaren matat in via en dialogruta.
+	 * Omvandlar den inmatade strängen till en char-array.
 	 */
 	public void userInput() {
 		String userInput = JOptionPane.showInputDialog(null, "Mata in den sträng som du vill söka efter");
@@ -50,6 +61,7 @@ public class KnuthMorrisPratt {
 	}
 
 	/**
+	 * Sköter utskrift av char-array.
 	 * 
 	 * @param array
 	 */
@@ -60,6 +72,7 @@ public class KnuthMorrisPratt {
 	}
 
 	/**
+	 * Sköter utskrift av heltals-array.
 	 * 
 	 * @param array
 	 */
@@ -70,9 +83,12 @@ public class KnuthMorrisPratt {
 	}
 
 	/**
+	 * Skapar en prefixtabell genom att söka efter de längsta prefixen som
+	 * matchar med de längsta suffixen i char-arrayen. Skriver ut antal
+	 * jämförelser som genomförts. Returnerar en heltalsarray med prefix.
 	 * 
 	 * @param p
-	 * @return
+	 * @return prefixArray
 	 */
 	public int[] partialMatchTable(char[] p) {
 		System.out.println("partialMatchTable()");
@@ -96,14 +112,17 @@ public class KnuthMorrisPratt {
 	}
 
 	/**
-	 * 
+	 * Söker efter det textmönster som matats in i aktuell textfil. Utskrift sker
+	 * om en matchning påträffats och ifall hela textmönstret återfunnits i
+	 * texten skrivs positionen ut. Notera att positionen skrivs ut för varje
+	 * position textmönstret återfinns på.
 	 */
 	public void search() {
 		System.out.println("search()");
 
-		int i = 0;
-		int j = 1;
-		int k = 0;
+		int i = 0; // Räknaren i texten som ska sökas i.
+		int j = 1; // Räknaren i textmönstret.
+		int k = 0; // Aktuell position.
 		int n = text.length;
 		int m = pattern.length;
 
@@ -126,7 +145,6 @@ public class KnuthMorrisPratt {
 				}
 				k = i;
 			}
-
 			if (j > 1) {
 				j = prefix[j - 1] + 1;
 			}
