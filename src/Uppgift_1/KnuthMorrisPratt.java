@@ -57,6 +57,8 @@ public class KnuthMorrisPratt {
 	 */
 	public void userInput() {
 		String userInput = JOptionPane.showInputDialog(null, "Mata in den sträng som du vill söka efter");
+		userInput = userInput.trim();
+		System.out.println(userInput);
 		this.pattern = userInput.toCharArray();
 	}
 
@@ -67,7 +69,7 @@ public class KnuthMorrisPratt {
 	 */
 	public void printArray(char[] array) {
 		for (int i = 0; i < array.length; i++) {
-			System.out.print(array[i] + " ");
+//			System.out.print(array[i] + " ");
 		}
 	}
 
@@ -78,7 +80,7 @@ public class KnuthMorrisPratt {
 	 */
 	public void printArray(int[] array) {
 		for (int i = 0; i < array.length; i++) {
-			System.out.print(array[i] + " ");
+//			System.out.print(array[i] + " ");
 		}
 	}
 
@@ -101,7 +103,7 @@ public class KnuthMorrisPratt {
 				a = prefixArray[a];
 			}
 			counterN++;
-			System.out.println("counterN är: " + counterN);
+//			System.out.println("counterN är: " + counterN);
 			if (p[a] == p[b]) {
 				a++;
 			}
@@ -129,13 +131,13 @@ public class KnuthMorrisPratt {
 		while (((n + 1) - k) >= m) {
 			counterM++;
 			while (j < m && text[i] == pattern[j]) {
-				System.out.println("Match! jämför " + text[i] + " med " + pattern[j]);
+//				System.out.println("Match! jämför " + text[i] + " med " + pattern[j]);
 				i++;
 				j++;
 			}
 			if (j >= m) {
 				positionFound += (k - 1) + ", ";
-				System.out.println("Positionen för strängen är: " + (k - 1));
+//				System.out.println("Positionen för strängen är: " + (k - 1));
 			}
 			if (prefix[j - 1] > 0) {
 				k = i - prefix[j - 1];

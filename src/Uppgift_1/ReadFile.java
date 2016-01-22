@@ -56,7 +56,7 @@ public class ReadFile {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-			 char[] f = readFile("src/CocaCola.txt");
+			 char[] f = readFile("src/Uppgift_1/skull.txt");
 //		char[] f = readFile("src/TheBible.txt");
 		for (int i = 0; i < f.length; i++) {
 			if (i == 40) {
