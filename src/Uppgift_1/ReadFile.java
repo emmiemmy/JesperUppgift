@@ -10,7 +10,7 @@ import java.util.*;
  *
  */
 public class ReadFile {
-	
+
 	public static char[] readFile(String fnam) throws IOException {
 		InputStreamReader r = new InputStreamReader(new FileInputStream(fnam));
 		ArrayList<char[]> blocks = new ArrayList<char[]>();
@@ -47,25 +47,26 @@ public class ReadFile {
 	}
 
 	/**
-	 * Programmets startmetod. Avkommentera på rad nr 56 eller 57 beroende på om
-	 * du vill söka i CocaCola-textfilen eller TheBible-textfilen. Avkommentera
-	 * på rad nr 65 eller 66 beroende på om du vill testa NaiveSearch eller
+	 * Programmets startmetod. Avkommentera på rad nr 59 eller 60 beroende på om
+	 * du vill söka i many-as-textfilen eller skull-textfilen. Avkommentera på
+	 * rad nr 70 eller 71 beroende på om du vill testa NaiveSearch eller
 	 * Knuth-Morris-Pratt-algoritmen.
 	 * 
 	 * @param args
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-			 char[] f = readFile("src/Uppgift_1/skull.txt");
-//		char[] f = readFile("src/TheBible.txt");
+		char[] f = readFile("src/Uppgift_1/skull.txt");
+		// char[] f = readFile("src/Uppgift_1/many-as.txt");
 		for (int i = 0; i < f.length; i++) {
 			if (i == 40) {
-				System.out.println("… and then " + (f.length - i) + " more characters.");
+				System.out.println("… and then " + (f.length - i)
+						+ " more characters.");
 				break;
 			}
 			System.out.println(i + ": " + f[i] + " (" + (int) f[i] + ")");
 		}
-		// new NaiveSearch(f);
-		new KnuthMorrisPratt(f);
+		new NaiveSearch(f);
+		// new KnuthMorrisPratt(f);
 	}
 }
